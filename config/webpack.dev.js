@@ -8,6 +8,6 @@ module.exports = merge(common, {
     contentBase: './dist',
     hot: true
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: new webpack.HotModuleReplacementPlugin(),
   devtool: 'inline-source-map'
 });

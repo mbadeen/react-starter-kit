@@ -25,6 +25,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            minimize: true
+          }
+        }
+      },
+      {
         test: /\.jsx?$/,
         resolve: {
           extensions: ['.js', '.jsx']
@@ -40,11 +49,13 @@ module.exports = {
           {
             loader: 'style-loader'
           },
-          loader: MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
             options: {
               publicPath: '../',
-              hmr: process.env.NODE_ENV === 'development',
-            },
+              hmr: process.env.NODE_ENV === 'development'
+            }
+          },
           {
             loader: 'css-loader',
             options: {
