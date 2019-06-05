@@ -1,26 +1,26 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
-    app: '../src/index.js'
+    app: './src/index.html'
+  },
+  output: {
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, '../dist')
   },
   plugins: [
-    new CleanWebpackPlugin(['dist/*']),
+    // new CleanWebpackPlugin(['dist/*']),
     new HtmlWebpackPlugin({ title: 'react-starter-kit' }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css'
     })
   ],
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
-  },
   resolve: {
-    modules: [path.resolve('../src'), path.resolve('../node_modules')]
+    modules: [path.resolve('./src'), path.resolve('./node_modules')]
   },
   module: {
     rules: [
