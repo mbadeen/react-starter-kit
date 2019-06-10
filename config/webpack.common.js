@@ -1,7 +1,6 @@
 const path = require('path');
 // const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: {
@@ -13,11 +12,7 @@ module.exports = {
   },
   plugins: [
     // new CleanWebpackPlugin(['dist/*']),
-    new HtmlWebpackPlugin({ title: 'react-starter-kit' }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css'
-    })
+    new HtmlWebpackPlugin({ title: 'react-starter-kit' })
   ],
   resolve: {
     modules: [path.resolve('./src'), path.resolve('./node_modules')]
@@ -42,29 +37,6 @@ module.exports = {
         use: {
           loader: 'babel-loader'
         }
-      },
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../',
-              hmr: process.env.NODE_ENV === 'development'
-            }
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localIdentName: '[name]-[local]-[hash:base64:5]',
-              sourceMap: true
-            }
-          }
-        ]
       },
       {
         test: /\.(jpg|png|gif|svg|woff|eot|ttf)$/,
