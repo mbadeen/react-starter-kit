@@ -19,7 +19,7 @@ module.exports = merge(common, {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../dist'
+              publicPath: './dist'
             }
           },
           {

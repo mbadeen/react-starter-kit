@@ -7,12 +7,15 @@ module.exports = {
     app: './src/index.js'
   },
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, '../dist')
+    filename: '[name]-bundle.js',
+    path: path.resolve(__dirname, './dist')
   },
   plugins: [
     // new CleanWebpackPlugin(['dist/*']),
-    new HtmlWebpackPlugin({ title: 'react-starter-kit' })
+    new HtmlWebpackPlugin({
+      title: 'react-starter-kit',
+      template: path.join(path.resolve(__dirname, './src'), 'index.html')
+    })
   ],
   resolve: {
     modules: [path.resolve('./src'), path.resolve('./node_modules')]
@@ -20,16 +23,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.html$/,
-        use: {
-          loader: 'html-loader',
-          options: {
-            minimize: true
-          }
-        }
-      },
-      {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         resolve: {
           extensions: ['.js', '.jsx']
         },
