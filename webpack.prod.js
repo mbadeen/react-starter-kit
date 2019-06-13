@@ -7,7 +7,7 @@ module.exports = merge(common, {
   devtool: 'source-map',
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name]-bundle.css',
       chunkFilename: '[id].css'
     })
   ],

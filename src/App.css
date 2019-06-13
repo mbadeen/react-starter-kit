@@ -1,0 +1,7 @@
+@import './globals.css';
+
+.title {
+  color: #bdbdbd;
+  background-color: #000;
+  font-family: sans-serif;
+}
