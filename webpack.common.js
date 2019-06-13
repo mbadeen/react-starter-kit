@@ -7,8 +7,8 @@ module.exports = {
     app: './src/index.js'
   },
   output: {
-    filename: '[name]-bundle.js',
-    path: path.resolve(__dirname, './dist')
+    filename: '[name]-bundle-[contenthash].js',
+    path: path.resolve(__dirname, 'dist')
   },
   plugins: [
     new CleanWebpackPlugin(),
