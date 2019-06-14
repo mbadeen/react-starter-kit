@@ -7,7 +7,7 @@ module.exports = {
     app: './src/index.js'
   },
   output: {
-    filename: '[name]-bundle-[contenthash].js',
+    filename: '[name]-[contenthash].js',
     path: path.resolve(__dirname, 'dist')
   },
   plugins: [
@@ -31,7 +31,10 @@ module.exports = {
         },
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader'
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true
+          }
         }
       },
       {
