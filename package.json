@@ -46,6 +46,6 @@
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js",
     "prod": "webpack --config webpack.prod.js",
-    "lint": "$(yarn bin)/eslint src"
+    "lint": "eslint --ext .js,.jsx src/ && stylelint src/*.css"
   }
 }
