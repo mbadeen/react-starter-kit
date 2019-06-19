@@ -12,7 +12,6 @@ module.exports = {
   },
   extends: [
     'airbnb',
-    'eslint:recommended',
     'plugin:import/errors',
     'plugin:import/warnings',
     'plugin:jsx-a11y/recommended',
@@ -23,6 +22,7 @@ module.exports = {
   ],
   plugins: ['react-hooks', 'jsx-a11y'],
   rules: {
+    'prettier/prettier': 'error',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn'
   }

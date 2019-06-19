@@ -15,8 +15,7 @@ module.exports = merge(common, {
         test: /\.css$/,
         use: [
           {
-            loader: 'style-loader',
-            hmr: true
+            loader: 'style-loader'
           },
           {
             loader: 'css-loader',
